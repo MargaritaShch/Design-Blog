@@ -5,13 +5,13 @@
         <ul>
             <li>MOST POPULAR</li>
             <router-link to="/">
-            <li>Back to Home Page</li>
+            <span>Back to Home Page</span>
             </router-link>
         </ul>
     </div>
     <div class="block">
-        <router-link to ='/SinglePostView'>
-        <div class =''>
+        <router-link to ='/single-post-view' @contextmenu="deletePost(0)">
+        <div class ='' >
             <img :src='pic2' alt ='photo' class ='photo'>
             <p>19.04.2023: <br>FETCH FESTIVAL LONDON</p>
         </div>
@@ -46,14 +46,15 @@
 </template>
 
 <script>
-import Header from '../../components/Header.vue';
-import pic1 from '../../assets/img/pic1.webp';
-import pic2 from '../../assets/img/pic2.webp';
-import pic3 from '../../assets/img/pic3.webp';
-import pic4 from '../../assets/img/pic4.webp';
-import pic5 from '../../assets/img/pic5.webp';
-import pic6 from '../../assets/img/pic6.webp';
-import pic7 from '../../assets/img/pic7.webp';
+import Header from '../components/Header.vue';
+import pic1 from '../assets/img/pic1.webp';
+import pic2 from '../assets/img/pic2.webp';
+import pic3 from '../assets/img/pic3.webp';
+import pic4 from '../assets/img/pic4.webp';
+import pic5 from '../assets/img/pic5.webp';
+import pic6 from '../assets/img/pic6.webp';
+import pic7 from '../assets/img/pic7.webp';
+// import './assets/main.scss';
 
 export default {
        components: {
@@ -68,31 +69,75 @@ export default {
             pic5: pic5,
             pic6: pic6,
             pic7: pic7,
+            posts: [
+                {
+                date: '19.04.2023',
+                title: 'FETCH FESTIVAL LONDON',
+                image: pic2,
+                } 
+        ]
+
         }
+    },
+    methods: {
+        deletePost(index){
+             console.log('Deleting :', index);
+           this.posts.splice(index, 1);
+        return false
     }
+    
+}
 }
 </script>
 
-<style scoped>
+<style scoped lang ='scss'>
 .posts{
     display: block;
     align-items: center;
 }
 .menu ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 72px 20px 50px;
-    font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 72px 20px 50px;
+  font-size: 18px;
+
+  li {
+    list-style: none;
+    color: black;
+  }
+  span{
+    color: black;
+    
+    &:hover{
+        color: rgb(105, 104, 104);
+    }
+  }
+} 
+
+a{
+    text-decoration: none;
+
+}
+img{
+    cursor: pointer;  
+}
+p{
+    text-decoration: none;
+      transition: transform 500ms ease;
+
+    &:hover{
+        color: rgb(105, 104, 104);
+         transform: translateY(-5px);
+    }
 }
 
 .block{
-    /* margin: 10px;
-    padding: 10px; */
     display: flex;
     justify-content: center;
 }
 
 p{
+    cursor: pointer;
     color: black;
     text-align: left;
     letter-spacing: 1px;

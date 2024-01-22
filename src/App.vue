@@ -2,13 +2,13 @@
   <div class ='main'>
   <Header/>
   <div class ='cover'>
-    <h1 class ='main-discribe'>Dreams unfold in pixels and hues
+    <h1 class ='main-describe'>Dreams unfold in pixels and hues
       <br/>
     Where surreal beauty breaks the rules
     <br/>
     Design tales that captivate, amuse</h1> 
     
-      <router-link to="/PostsListView">
+      <router-link to="/posts-list-view">
         <button class='click-posts'>VIEW POSTS</button>
       </router-link>
   </div>   
@@ -18,7 +18,7 @@
 
 <script>
 import './assets/main.scss';
-import SinglePostView from './router/views/SinglePostView.vue';
+import SinglePostView from './views/SinglePostView.vue';
 import Header from './components/Header.vue'
 
 export default {
@@ -28,8 +28,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.click-posts{
+<style scoped lang="scss">
+.click-posts {
   align-items: center;
   margin-top: 30px;
   width: 150px;
@@ -38,31 +38,33 @@ export default {
   border: 0.2px solid rgba(0, 0, 0, 0.225);
   font-size: 18px;
   border-radius: 3px;
+  transition: transform 500ms ease;
+
+  &:hover {
+    background: rgba(176, 173, 173, 0.705);
+    transform: translateY(-5px);
+  }
 }
 
-.click-posts:hover{
-  background: rgba(176, 173, 173, 0.705);
-}
-
-.cover{
+.cover {
   background-image: url(src/assets/img/cover.webp);
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 180px;
   margin: 0px 20px;
-    
 }
 
-.main-discribe{
-  text-align: center;  
+.main-describe {
+  text-align: center;
   letter-spacing: 3px;
-  font-size:40px;
+  font-size: 40px;
   color: white;
-  font-weight: 400; 
-  line-height: 2;  
+  font-weight: 400;
+  line-height: 2;
 }
 
-.click-posts{
-  margin-left: 45%;
+.click-posts {
+  margin-left: 47%;
+  cursor: pointer;
 }
 </style>

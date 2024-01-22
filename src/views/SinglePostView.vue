@@ -1,7 +1,9 @@
 <script>
-import Header from '../../components/Header.vue';
-import avatar from '../../assets/img/avatar.webp';
-import singlepic1 from '../../assets/img/singlepic1.webp';
+import Header from '../components/Header.vue';
+import avatar from '../assets/img/avatar.webp';
+import singlepic1 from '../assets/img/singlepic1.webp';
+// import './assets/main.scss';
+
 export default {
      components: {
     Header,
@@ -9,18 +11,27 @@ export default {
     data (){
         return{
             avatar: avatar,
-            singlepic1: singlepic1
+            singlepic1: singlepic1,
+            isOpenModal: false
         }
+    },
+
+    getOpenModal(){
+
+    },
+    getCloseModal(){
+
     }
+
 }
 </script>
 
 <template>
  <Header/>
- <div class ='container'>
+ <div class ='countainer'>
     <div class='menu'>
         <ul>
-             <router-link to="/PostsListView">
+             <router-link to="/posts-list-view">
             <li>Back to All posts</li>
             </router-link>
           <router-link to="/">
@@ -33,16 +44,15 @@ export default {
             <!-- <img :src="avatar" alt="avatar" class="avatar" /> -->
             <p class="date">19.04.2023</p>
             <h3> FETCH FESTIVAL LONDON</h3>
-            <p className="name">Autor: Amalia Nguema</p>
+            <p className="name">Author: Amalia Nguema</p>
         </div>
    <div class='countainer'>
    
     <div>
         <img :src='singlepic1' alt ='photo' class ='photo'>
     </div>
-
     <div class='discribe-post'>
-               <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec gravida magna. Sed feugiat mi at magna efficitur, ut ultricies felis scelerisque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec gravida magna. Sed feugiat mi at magna efficitur, ut ultricies felis scelerisque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec gravida magna. Sed feugiat mi at magna efficitur, ut ultricies felis scelerisque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec gravida magna. Sed feugiat mi at magna efficitur, ut ultricies felis scelerisque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec gravida magna. Sed feugiat mi at magna efficitur, ut ultricies felis scelerisque.</p>
+               <p class='text'>Blogging gives your site a voice, so let your business’ personality shine through. Are you a creative agency? Go wild with original blog posts about recent projects, cool inspirational ideas, or what your company culture is like. Add images, and videos to really spice it up, and pepper it with slang to keep readers interested. Are you a programmer? Stay on the more technical side by offering weekly tips, tricks, and hacks that show off your knowledge of the industry. No matter what type of business you have, one thing is for sure - blogging gives your business the opportunity to be heard in a way in a different and unconventional way.</p>
     </div>
     </div>
         
@@ -53,7 +63,7 @@ export default {
 
 
 <style scoped>
-.container{
+.countainer{
     margin-top: -18px;
 }
 .menu ul {
@@ -62,6 +72,14 @@ export default {
     padding: 30px 50px 20px 50px;
     list-style: none;
     font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color:  black;
+}
+
+a:hover{
+    color: rgb(96, 94, 94);
 }
 li{
     text-decoration: none;
@@ -74,6 +92,7 @@ li{
 }
 
 .discribe p{
+    font-weight: 100;
     font-size: 18px;
     text-align: center;
     letter-spacing: 1px;
@@ -94,5 +113,16 @@ li{
     margin-top: 20px;
     margin-left: 120px;
 }
-
+.name{
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+.name:hover{
+    color: grey;
+}
+.discribe-post p{
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
 </style>
