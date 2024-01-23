@@ -1,21 +1,30 @@
 import App from './App.vue';
 import { createApp } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import SinglePostView from './views/SinglePostView.vue';
-import  PostsListView  from './views/PostsListView.vue';
-import { VModalPlugin } from 'vue3-modal';
-import  Modal  from './components/Modаl.vue'; 
+import SinglePost from './views/SinglePost.vue';
+import  PostsList  from './views/PostsList.vue';
+import Home from './views/Home.vue'
+
 
 const routes: Array<RouteRecordRaw> = [
-  
     {
-        path: '/posts-list-view',
-        component: PostsListView,
+        path: '/',
+        name:'home',
+        component: Home,
+        meta: {
+            breadcrumb: 'Main',
+        },
+    },
+    {
+        path: '/posts',
+        name:'posts',
+        component: PostsList,
     },
 
     {
-        path: '/single-post-view',
-        component: SinglePostView ,
+        path: '/post',
+        name:'post',
+        component: SinglePost ,
     },
 ];
 
@@ -27,6 +36,4 @@ const router = createRouter({
 
 const app = createApp(App);
 app.use(router);
-app.use(VModalPlugin);
-app.component('Modal', Modal);
 app.mount('#app');
