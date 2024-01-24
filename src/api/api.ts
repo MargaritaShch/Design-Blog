@@ -24,7 +24,7 @@ export const getPosts = async (): Promise<Array<Post>> => {
     }
 }
 
-export const getPostById = async (id): Promise<Post> => {
+export const getPostById = async (id:Number): Promise<Post> => {
     try {
         const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
         return await data.json();
@@ -33,7 +33,7 @@ export const getPostById = async (id): Promise<Post> => {
     }
 }
 
-export const getUserById = async (id): Promise<User> => {
+export const getUserById = async (id:Number): Promise<User> => {
     try {
         const data = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
         return await data.json();
@@ -42,7 +42,7 @@ export const getUserById = async (id): Promise<User> => {
     }
 }
 
-export const deletePostById = async (id): Promise<{}> => {
+export const deletePostById = async (id:Number): Promise<{}> => {
     try {
         const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             method: 'DELETE',

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.11",
+    "vue-3-breadcrumbs": "^2.0.0",
     "vue-router": "^4.0.13",
     "vue3-modal": "^0.1.6"
   },

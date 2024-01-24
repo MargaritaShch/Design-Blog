@@ -5,6 +5,11 @@
         <br/>
         <p>Stories About Design</p>
       </div>
+
+    <div class="breadcrumbs">
+      <slot name="breadcrumbs"></slot>
+    </div>
+
   </div> 
 </template>
 
@@ -17,9 +22,13 @@ export default {
 
 <style scoped>
 .header{
-  display: flex;
   justify-content: center;
   /* padding: 20px;  */
+}
+
+.breadcrumbs{
+  display: flex;
+  justify-content: center;
 }
 
 .logo h1{

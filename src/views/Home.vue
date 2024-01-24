@@ -4,7 +4,10 @@ import Header from '../components/Header.vue'
 
 
 <template>
-<Header/>   
+<Header/>
+    <div class='breadcrumbs'>
+      <slot name='breadcrumbs'></slot>
+    </div>   
 <div class ='main'>
   <div class ='cover'>
     <h1 class ='main-describe'>Dreams unfold in pixels and hues
@@ -24,17 +27,17 @@ import Header from '../components/Header.vue'
 
 <style scoped lang="scss">
 .click-posts {
-  align-items: center;
-  margin-top: 30px;
-  width: 200px;
-  height: 50px;
-  background: rgba(207, 204, 204, 0.705);
-  border: 0.2px solid rgba(0, 0, 0, 0.225);
-  font-size: 20px;
-  border-radius: 10px;
-  margin-left: 45%;
-  cursor: pointer;
-  transition: transform 500ms ease;
+    align-items: center;
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    background: rgba(207, 204, 204, 0.705);
+    border: 0.2px solid rgba(0, 0, 0, 0.225);
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 45%;
+    cursor: pointer;
+    transition: transform 500ms ease;
 
   &:hover {
     background: rgba(176, 173, 173, 0.705);
@@ -43,20 +46,20 @@ import Header from '../components/Header.vue'
 }
 
 .cover {
-  background-image: url(src/assets/img/cover.webp);
-  background-size: cover;
-  padding-top: 150px;
-  padding-bottom: 180px;
-  margin: 0px 20px;
+    background-image: url(src/assets/img/cover.webp);
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 180px;
+    margin: 0px 20px;
 }
 
 .main-describe {
-  text-align: center;
-  letter-spacing: 3px;
-  font-size: 40px;
-  color: white;
-  font-weight: 400;
-  line-height: 2;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+    line-height: 2;
 }
 
 @media (min-width: 992px) {
