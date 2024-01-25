@@ -3,14 +3,15 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import SinglePost from './views/SinglePost.vue';
 import  PostsList  from './views/PostsList.vue';
-import Home from './views/Home.vue'
+import HomePage from './views/HomePage.vue';
+import Breadcrumbs from './components/Breadcrumbs.vue'
 
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name:'home',
-        component: Home,
+        component: HomePage,
         meta: {
             breadcrumb: 'Main',
         },
@@ -19,14 +20,43 @@ const routes: Array<RouteRecordRaw> = [
         path: '/posts',
         name:'posts',
         component: PostsList,
+        meta: {
+          breadCrumb(route: Route) {
+            const idParam = route.params.id;
+            return [
+              {
+                text: 'Home',
+                to: { name: 'home' },
+              },
+            ]
+          },
+        },
     },
 
     {
-        path: '/post',
-        name:'post',
-        component: SinglePost ,
-    },
-];
+        path: "/posts/:id",
+        name: "post",
+        component: SinglePost,
+        meta: {
+          breadCrumb(route: Route) {
+            const idParam = route.params.id;
+            return [
+              {
+                text: 'Home',
+                to: { name: 'home' },
+              },
+              {
+                text: 'Posts',
+                to: { name: 'posts' },
+              },
+              {
+                text: `Post № ${idParam}`
+              }
+            ]
+          },
+        },
+      },
+    ];
 
 const router = createRouter({
   history: createWebHistory(),

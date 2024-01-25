@@ -1,6 +1,6 @@
 <script setup>
-import Header from '../components/Header.vue';
-import { ref, onMounted } from "vue";
+import HeaderBase from '../components/HeaderBase.vue';
+import { ref, onMounted,onBeforeUnmount } from "vue";
 import { getPostById, getUserById } from "../api/api.ts";
 import { useRoute } from 'vue-router'
 
@@ -18,143 +18,99 @@ onMounted(async () => {
     console.error('Error fetching posts:', error);
   }
 });
+
 </script>
 
 
 <template>
- <Header>
-   <template v-slot:breadcrumbs>
-    <div class='menu'>
-        <ul>
-            <router-link :to="{name:'home'}">
-                <li class='left-li'>Back to Home Page/</li>
-            </router-link>
-            <router-link :to="{name:'posts'}">
-                <li>Back to All posts/</li>
-            </router-link>
-                <li>{{ `Post # ${post.id}` }}</li>
-        </ul>
-    </div>
-    </template> 
-</Header>
-
- <div class ='countainer1'>
-    <div class='discribe'>
+ <HeaderBase/>
+ <div>
+    <div class='describe'>
         <h3>{{ post.title }}</h3>
 
-    <div class='countainer'>
-        <div class='discribe-post'>
-            <p class='text'>{{ post.body }}</p>
-        </div>
+        <div class='container'>
+            <div class='describe-post'>
+                <p>{{ post.body }}</p>
+            </div>
 
-        <div className='general-info'>
-            <p className='name'>Author: {{ user.name }}</p>
-            <p>Email: {{user.email }} <br>
-               Phone: {{user.phone}} <br>
-               Website: {{user.website}} <br>
-            </p>
-        </div>
-    </div>     
+            <div class='general-info'>
+                <p class='name'>Author: {{ user.name }}</p>
+                <p>Email: {{user.email }} <br>
+                Phone: {{user.phone}} <br>
+                Website: {{user.website}} <br>
+                </p>
+            </div>
+
+        </div>     
    </div> 
  </div>
 </template>
 
 
-<style scoped lang ='scss'>
-.countainer{
+<style scoped lang ="scss">
+.container{
     margin-top: 45px;
     margin-bottom: 25px;
 }
 
-.menu ul {
-    display: flex;
-    list-style: none;
-    font-size: 18px;
-}
 
-a{
-    text-decoration: none;
-    color:  black;
-}
-
-a:hover{
-    color: rgb(96, 60, 214);
-}
-
-li{
-    text-decoration: none;   
-    padding-right: 5px;
-}
-
-
-.discribe h3{
+.describe{
+    h3{
     font-weight: bold;
     font-size: 27px;
     text-align: center;
     letter-spacing: 1px;
 }
 
-.discribe p{
+p {
     font-weight: 100;
     font-size: 18px;
     text-align: center;
     letter-spacing: 1px;
     cursor: pointer;
     margin-top: -15px;
-}
+  }
+} 
 
-.discribe-post p{
-    width: 500px;
-    font-weight: 300;
-    font-size: 18px; 
-    text-align: justify;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    margin-left: 24%;
+
+.describe-post {
+    p{
+        width: 500px;
+        font-weight: 300;
+        font-size: 18px; 
+        text-align: justify;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        
+        @media (min-width: 992px){
+            margin-left: 24%;
+        }
+        @media (min-width: 1536px){
+            margin-left: 34%;
+        }
+        @media (min-width: 1920px) {
+            margin-left: 35%;
+        
+        }
+    }
 }
 
 .general-info{
     margin-top: 60px;
-}
+    
+    @media (min-width: 992px){
 
-.general-info p{
-    font-size: 15px;
-    text-align: left;
-    padding-left: 70px;
-}
+    }
+    @media (min-width: 1536px){
 
-@media (min-width: 992px){
-    .menu {
-        margin-right: 50%;
-        padding: 30px 0px;
+    }
+    @media (min-width: 1920px){
+        margin-right: 50px;
     }
 }
 
-@media (min-width: 1536px) {
-    .discribe-post p{
-        margin-left: 34%;
-    }
-      .menu {
-        margin-right: 47%;
-        padding: 30px 0px;
-    }
-     .general-info{
-        margin-left: 11%;
-        padding: 30px 0px;
-    }
-}
-
-@media (min-width: 1920px) {
-     .discribe-post p{
-        margin-left: 38%;
-    }
-    .menu {
-        margin-right: 50%;
-        padding: 30px 0px;
-    }
-    .general-info{
-        margin-left: 11%;
-        padding: 30px 0px;
-    }
+p{
+    font-size: 16px;
+    color: rgb(99, 96, 96);  
 }
 </style>

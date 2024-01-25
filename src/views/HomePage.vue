@@ -1,10 +1,10 @@
 <script setup>
-import Header from '../components/Header.vue'
+import HeaderBase from '../components/HeaderBase.vue'
 </script>
 
 
 <template>
-<Header/>
+<HeaderBase/>
     <div class='breadcrumbs'>
       <slot name='breadcrumbs'></slot>
     </div>   
