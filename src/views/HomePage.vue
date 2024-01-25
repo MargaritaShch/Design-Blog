@@ -9,15 +9,15 @@ import HeaderBase from '../components/HeaderBase.vue'
       <slot name='breadcrumbs'></slot>
     </div>   
 <div class ='main'>
-  <div class ='cover'>
-    <h1 class ='main-describe'>Dreams unfold in pixels and hues
+  <div :class ="$style.cover">
+    <h1 :class ="$style.mainDescribe">Dreams unfold in pixels and hues
       <br/>
         Where surreal beauty breaks the rules
     <br/>
         Design tales that captivate, amuse</h1> 
     
     <router-link :to="{name:'posts'}">
-        <button class='click-posts'>VIEW POSTS</button>
+        <button :class="$style.clickPosts">VIEW POSTS</button>
     </router-link>
   </div>   
 </div>
@@ -25,8 +25,8 @@ import HeaderBase from '../components/HeaderBase.vue'
 </template>
 
 
-<style scoped lang="scss">
-.click-posts {
+<style scoped module>
+.clickPosts {
     align-items: center;
     margin-top: 30px;
     width: 200px;
@@ -53,7 +53,7 @@ import HeaderBase from '../components/HeaderBase.vue'
     margin: 0px 20px;
 }
 
-.main-describe {
+.mainDescribe {
     text-align: center;
     letter-spacing: 3px;
     font-size: 40px;
@@ -63,8 +63,8 @@ import HeaderBase from '../components/HeaderBase.vue'
 }
 
 @media (min-width: 992px) {
-   .click-posts {
-        margin-left: 40%;
+   .clickPosts {
+        margin-left: 45%;
     }
 }
 

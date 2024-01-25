@@ -25,16 +25,16 @@ onMounted(async () => {
 <template>
  <HeaderBase/>
  <div>
-    <div class='describe'>
+    <div :class="$style.describe">
         <h3>{{ post.title }}</h3>
 
-        <div class='container'>
-            <div class='describe-post'>
+        <div :class="$style.container">
+            <div :class="$style.describePost">
                 <p>{{ post.body }}</p>
             </div>
 
-            <div class='general-info'>
-                <p class='name'>Author: {{ user.name }}</p>
+            <div :class="$style.generalInfo">
+                <p>Author: {{ user.name }}</p>
                 <p>Email: {{user.email }} <br>
                 Phone: {{user.phone}} <br>
                 Website: {{user.website}} <br>
@@ -47,12 +47,11 @@ onMounted(async () => {
 </template>
 
 
-<style scoped lang ="scss">
+<style scoped module>
 .container{
     margin-top: 45px;
     margin-bottom: 25px;
 }
-
 
 .describe{
     h3{
@@ -73,7 +72,7 @@ p {
 } 
 
 
-.describe-post {
+.describePost {
     p{
         width: 500px;
         font-weight: 300;
@@ -95,9 +94,9 @@ p {
     }
 }
 
-.general-info{
+.generalInfo{
     margin-top: 60px;
-    
+
     @media (min-width: 992px){
 
     }

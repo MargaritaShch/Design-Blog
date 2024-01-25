@@ -1,11 +1,11 @@
 <template>
-    <div class ='header'>
-      <div class ='logo'>
+    <div :class ="$style.header">
+      <div :class ="$style.logo">
         <h1>LODI</h1> 
         <br/>
       </div>
 
-    <div class="breadcrumbs">
+    <div :class="$style.breadcrumbs">
       <Breadcrumbs/>
     </div>
 
@@ -16,7 +16,7 @@
 import Breadcrumbs from '../components/Breadcrumbs.vue';
 </script>
 
-<style scoped lang='scss'>
+<style scoped module>
 .header {
   justify-content: center;
 

@@ -29,24 +29,24 @@ const deletePost = async (id) => {
 <template>
 <div class='posts'>
     <HeaderBase/>
-    <div class='block'>
-        <div class='info-post'
+    <div :class="$style.block">
+        <div :class="$style.infoPost"
         v-for='post in posts' 
         :key='post.id'
         @click.left='showPost(post.id)'
         @click.right.prevent='deletePost(post.id)'
         >
             <!-- <img :src="getImageForPost(post.id)" alt ='photo' class ='photo'> -->
-            <p class ='num'>{{ `Post # ${post.id}:` }}</p>
-            <p class ='title'>{{ post.title }}</p>
+            <p :class ="$style.num">{{ `Post # ${post.id}:` }}</p>
+            <p>{{ post.title }}</p>
         </div>
     </div>
 </div>
 </template>
 
 
-<style scoped lang ='scss'>
-.info-post{
+<style scoped module>
+.infoPost{
     text-align: center ;
     .num{
         font-weight: bold;
