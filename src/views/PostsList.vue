@@ -45,7 +45,7 @@ const deletePost = async (id) => {
 </template>
 
 
-<style scoped module>
+<style module lang="scss">
 .infoPost{
     text-align: center ;
     .num{

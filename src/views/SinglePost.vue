@@ -47,7 +47,7 @@ onMounted(async () => {
 </template>
 
 
-<style scoped module>
+<style module lang="scss">
 .container{
     margin-top: 45px;
     margin-bottom: 25px;

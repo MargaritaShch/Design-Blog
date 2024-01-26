@@ -29,7 +29,7 @@ const breadCrumbs = computed(() => {
   </ul>
 </template>
 
-<style scoped lang ='scss'>
+<style module lang="scss">
 ul{
   display: flex;
   list-style: none;

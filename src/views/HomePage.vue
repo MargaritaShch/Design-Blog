@@ -25,7 +25,7 @@ import HeaderBase from '../components/HeaderBase.vue'
 </template>
 
 
-<style scoped module>
+<style module lang="scss">
 .clickPosts {
     align-items: center;
     margin-top: 30px;

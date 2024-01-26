@@ -16,7 +16,7 @@
 import Breadcrumbs from '../components/Breadcrumbs.vue';
 </script>
 
-<style scoped module>
+<style module lang="scss">
 .header {
   justify-content: center;
 
