@@ -71,7 +71,6 @@ p {
   }
 } 
 
-
 .describePost {
     p{
         width: 500px;
@@ -98,13 +97,13 @@ p {
     margin-top: 60px;
 
     @media (min-width: 992px){
-
+        margin-left: 30px;
     }
     @media (min-width: 1536px){
-
+        margin-left: 150px;
     }
     @media (min-width: 1920px){
-        margin-right: 50px;
+        margin-left: 150px;
     }
 }
 

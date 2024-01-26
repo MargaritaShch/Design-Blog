@@ -50,6 +50,9 @@ const deletePost = async (id) => {
     text-align: center ;
     .num{
         font-weight: bold;
+         &:hover{
+        color: rgb(128, 128, 128)
+    }
     }
 }
 
@@ -62,10 +65,6 @@ p{
     font-size: 18px;
     text-align: center ;
     text-decoration: none;
-
-    &:hover{
-        color: rgb(128, 128, 128)
-    }
 }
 
 .block{
