@@ -1,10 +1,9 @@
 import App from './App.vue';
 import { createApp } from 'vue';
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, RouteLocationNormalized } from 'vue-router';
 import SinglePost from './views/SinglePost.vue';
 import  PostsList  from './views/PostsList.vue';
 import HomePage from './views/HomePage.vue';
-import Breadcrumbs from './components/Breadcrumbs.vue'
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -21,8 +20,7 @@ const routes: Array<RouteRecordRaw> = [
         name:'posts',
         component: PostsList,
         meta: {
-          breadCrumb(route: Route) {
-            const idParam = route.params.id;
+          breadCrumb() {
             return [
               {
                 text: 'Home',
@@ -38,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "post",
         component: SinglePost,
         meta: {
-          breadCrumb(route: Route) {
+          breadCrumb(route: RouteLocationNormalized) {
             const idParam = route.params.id;
             return [
               {
