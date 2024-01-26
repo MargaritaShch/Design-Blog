@@ -3,6 +3,5 @@
 - Vue3 
 - TypeScript
 - Vite
-- Breadscrumbs
 - SCSS
 
