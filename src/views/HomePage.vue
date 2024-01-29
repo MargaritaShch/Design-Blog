@@ -9,7 +9,7 @@ import HeaderBase from '../components/HeaderBase.vue'
       <slot name='breadcrumbs'></slot>
     </div>   
 <div class ='main'>
-  <div :class ="$style.cover">
+  <div>
     <h1 :class ="$style.mainDescribe">Dreams unfold in pixels and hues
       <br/>
         Where surreal beauty breaks the rules
@@ -45,38 +45,30 @@ import HeaderBase from '../components/HeaderBase.vue'
   }
 }
 
-.cover {
-    background-image: url(src/assets/img/cover.webp);
-    background-size: cover;
-    padding-top: 150px;
-    padding-bottom: 180px;
-    margin: 0px 20px;
-}
-
 .mainDescribe {
     text-align: center;
     letter-spacing: 3px;
     font-size: 40px;
-    color: white;
+    color:black;
     font-weight: 400;
     line-height: 2;
 }
 
 @media (min-width: 992px) {
    .clickPosts {
-        margin-left: 45%;
+        margin-left: 40%;
     }
 }
 
 @media (min-width: 1536px) {
    .click-posts {
-        margin-left: 43%;
+        margin-left: 50%;
     }
 }
 
 @media (min-width: 1920px) {
    .click-posts {
-        margin-left: 45%;
+        margin-left: 50%;
     }
 }
 </style>
